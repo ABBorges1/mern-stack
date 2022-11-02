@@ -20,13 +20,13 @@ export default function EditTaskModal({task, taskEdited}) {
   
     return (
       <>
-        <Button variant="warning" onClick={handleShow}>
-          Edit
+        <Button variant="secondary" onClick={handleShow}>
+          Editar
         </Button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Task Edit</Modal.Title>
+            <Modal.Title>Editar Tarefa</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,32 +35,35 @@ export default function EditTaskModal({task, taskEdited}) {
                   <label htmlFor="taskId">Id</label>
                   <input {...register("id")} type="text" className="form-control" defaultValue={task.id} name="id" id="id" disabled />
                 </div>
-
             </div>
+            <br/>
             <div className="row">
                 <div className="form-group col-md-6">
-                    <label htmlFor="task">Task</label>
-                    <input {...register("task")} type="text" className="form-control" defaultValue={task.task} name="task" id="task" placeholder="Create a Task" />
+                    <label htmlFor="task">Tarefa</label>
+                    <input {...register("task")} type="text" className="form-control" defaultValue={task.task} name="task" id="task" placeholder="Tarefa editada" />
                 </div>
             </div>
+            <br/>
             <div className="row">
                 <div className="form-group col-md-6">
-                    <label htmlFor="assignee">Assignee</label>
-                    <input {...register("assignee")} type="text" className="form-control" defaultValue={task.assignee} name="assignee" id="assignee" placeholder="Assignee" />
+                    <label htmlFor="assignee">Responsável</label>
+                    <input {...register("assignee")} type="text" className="form-control" defaultValue={task.assignee} name="assignee" id="assignee" placeholder="Novo responsável" />
                 </div>
             </div>
+            <br/>
             <div className="row">
                 <div className="form-group col-md-6">
                     <label htmlFor="status">Status:</label>
                     <select {...register("status")} name="status" defaultValue={task.status} className="form-control" id="status">
-                        <option>To Be Done</option>
-                        <option>In Progress</option>
-                        <option>Completed</option>
+                        <option>A Ser Feito</option>
+                        <option>Em Andamento</option>
+                        <option>Finalizado</option>
                     </select>
                 </div>
             </div>
             <div className="btncenter">
-              <input type="submit" className="btn btn-danger" />
+              <br/>
+              <input type="submit" className="btn btn-dark" />
             </div>
             </form>
           </Modal.Body>
