@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3080",
+  "proxy": "https://mern-stack.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",
